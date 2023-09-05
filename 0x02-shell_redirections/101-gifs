@@ -1,3 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" -exec sh -c 'echo "${0##*/}" | sed -E "s/\.gif$//i"' {} \; | LC_ALL=C sort -f
-
+find . -type f -name "*.gif" -exec sh -c 'echo "${0##*/}" | rev | cut -c 5- | rev' {} \; | LC_ALL=C sort -f
